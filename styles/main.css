@@ -1,18 +1,20 @@
 @import url("reset.css");
 /* This is a custom font from google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fondamento:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fondamento:ital@0;1&family=Rasa:ital,wght@0,300..700;1,300..700&display=swap");
 
 /* what is :root? https://developer.mozilla.org/en-US/docs/Web/CSS/:root */
 :root {
   /* Define design variables */
-  --color-primary: #2b2d42;
-  --color-secondary: #bfc6d2;
-  --color-background: #f5f5f5;
-  --color-accent: #535bf2;
+  --color-primary: #f4f5f7;
+  --color-secondary: #5270a4;
+  --color-background: #b40d0d;
+  --color-accent: #75dd9d;
 
   --border-radius: 0.5rem;
 
-  --font-titles: "Frank Ruhl Libre", serif;
+  --font-titles: "Fondamento", serif;
   --font-body: system-ui, sans-serif; /* system-ui matches the user's system font */
 }
 
@@ -139,15 +141,15 @@ fieldset {
 }
 
 .counter-button {
-  background-color: var(--color-accent);
-  width: 2rem;
-  height: 2rem;
-  color: white;
+  background-color: #0cee62;
+  width: 20rem;
+  height: 7rem;
+  color: rgb(250, 247, 247);
   border: none;
-  border-radius: 1000px; /* Make the button round */
+  border-radius: px; /* Make the button round */
   cursor: pointer;
   font-weight: bold;
-
+  transition: filter 0.2s;
   &:hover {
     filter: brightness(120%);
   }
@@ -156,3 +158,45 @@ fieldset {
     filter: brightness(80%);
   }
 }
+
+.image-counter {
+  text-align: center;
+}
+
+.counter-button {
+  font-size: 1.5rem;
+  padding: 0.5em 1em;
+  margin: 0 0.5em;
+  cursor: pointer;
+}
+
+#counter-image {
+  display: block;      /* Ensures margin auto works */
+  margin: 1em auto;    /* Centers horizontally */
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #333;
+  border-radius: 8px;
+  width: 300px;        /* Adjust as needed */
+  transition: transform 0.5s ease;
+}
+
+#counter-image.rotate {
+  transform: rotate(180deg);
+}
+
+
+
+.slide-in-hidden {
+  opacity: 0;
+  transform: translateX(-100%); /* Start from off-screen left */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-in {
+  opacity: 1;
+  transform: translateX(0); /* Slide into place */
+  transition: transform 0.8s;
+  perspective: 1000px;
+}
+

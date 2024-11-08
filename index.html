@@ -9,19 +9,24 @@
   </head>
   <body>
     <header role="banner">
-      <h1>Welcome to my Website!</h1>
+      <h1>Itamar Yekutiel Website</h1>
     </header>
     <main>
-      <p>This is a paragraph.</p>
-      <a href="/elements.html">Elements Page</a>
+      <p id="intro-text" class="slide-in-hidden">Itamar is the king and thus needs a website.<br>Welcome to his kingdom!</p>
+      <p><a href="about.html">About Itamar's Kingdom</a></p>
+      <p><a href="/elements.html">Elements Page</a></p>
+      
 
-      <div class="counter">
-        <h2>Counter</h2>
-        <button id="increment" class="counter-button">+</button>
-        <button id="decrement" class="counter-button">−</button>
-        <span id="count">0</span>
+      <div class="image-counter">
+        <button id="change-picture" class="counter-button">Click to Change the Picture</button>
+        <img id="counter-image" src="https://raw.githubusercontent.com/dohliam/html5-sample-media/master/Coloured%2C_textured_craft_card_edit.jpg" alt="click image" />
+        <p>When you click the picture it flips</p>
       </div>
     </main>
+
+    <footer>
+      <p>Thank you for visiting! <a href="https://example.com/contact">Contact us</a> for more information.</p>
+    </footer>
 
     <script type="module" src="/main.js"></script>
   </body>
