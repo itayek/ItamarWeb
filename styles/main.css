@@ -1,161 +1,156 @@
 @import url("reset.css");
-/* This is a custom font from google fonts */
-@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Fondamento:ital@0;1&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Fondamento:ital@0;1&family=Rasa:ital,wght@0,300..700;1,300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@400;700&display=swap");
 
-/* what is :root? https://developer.mozilla.org/en-US/docs/Web/CSS/:root */
+/* Root Design Variables */
 :root {
-  /* Define design variables */
-  --color-primary: #f4f5f7;
-  --color-secondary: #5270a4;
-  --color-background: #b40d0d;
-  --color-accent: #75dd9d;
+  --color-primary: #1f1f2e;
+  --color-secondary: #1b98f5;
+  --color-background: #f4f5f7;
+  --color-accent: #124ac4;
+  --color-text: #333;
+  --border-radius: 8px;
 
-  --border-radius: 0.5rem;
-
-  --font-titles: "Fondamento", serif;
-  --font-body: system-ui, sans-serif; /* system-ui matches the user's system font */
+  --font-heading: "Roboto Serif", serif;
+  --font-body: "Inter", sans-serif;
 }
 
+/* Global Styles */
 body {
-  color: var(--color-primary);
-  background-color: var(--color-background);
   font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
-/* Layout */
 main {
   padding: 2rem;
-}
-
-header {
-  padding: 1rem;
-}
-
-main,
-header,
-nav {
-  max-width: 60rem;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-article,
-nav {
-  padding: 1rem 0;
+header {
+  background-color: var(--color-secondary);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  border-radius: var(--border-radius);
 }
 
-.rtl {
-  direction: rtl;
-}
-
-/* Text */
-p {
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
   margin: 1rem 0;
-}
-
-ul,
-ol {
-  margin-top: 0.5rem;
-}
-
-li {
-  margin-top: 0.3rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 1rem;
-  font-family: var(--font-titles);
-  font-weight: 500;
-  font-optical-sizing: auto;
+  line-height: 1.2;
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 2.5rem;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2rem;
 }
 
-h3 {
-  font-size: 1.5em;
-}
-
-h4 {
-  font-size: 1.2em;
-}
-
-h5 {
-  font-size: 1em;
-}
-
-h6 {
-  font-size: 0.83em;
+p, ul, ol {
+  margin: 1rem 0;
 }
 
 blockquote {
-  padding-left: 1rem;
-  border-left: 2px solid var(--color-secondary);
+  padding: 1rem;
+  background-color: #f0f0f0;
+  border-left: 4px solid var(--color-accent);
+  font-style: italic;
+  margin: 1.5rem 0;
 }
 
 /* Links */
 a {
   color: var(--color-accent);
-  text-decoration: underline;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 a:hover {
-  text-decoration: none;
+  color: var(--color-secondary);
+  text-decoration: underline;
 }
 
-/* Tables */
-table {
-  margin-top: 1.5rem;
-  border-spacing: 0px;
-  border-collapse: collapse;
+/* Buttons */
+button {
+  background-color: var(--color-secondary);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
-table td,
-table th {
-  padding: 0.5rem;
-  border: 1px solid var(--color-secondary);
+button:hover {
+  background-color: var(--color-accent);
+}
+button:active {
+  transform: scale(0.95);
+}
+
+/* Layout Enhancements */
+header, main, nav {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+article, nav {
+  padding: 1rem 0;
 }
 
 /* Forms */
-input,
-button,
-textarea,
-select {
-  padding: 0.2em 0.5em;
-  border: 1px solid var(--color-secondary);
+input, textarea, select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-primary);
   border-radius: var(--border-radius);
+  margin-top: 0.5rem;
 }
 
-fieldset {
-  margin-top: 1.5rem;
-  border: 1px solid var(--color-secondary);
+/* Animation */
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.counter-button {
-  background-color: #0cee62;
-  width: 20rem;
-  height: 7rem;
-  color: rgb(250, 247, 247);
-  border: none;
-  border-radius: px; /* Make the button round */
-  cursor: pointer;
-  font-weight: bold;
-  transition: filter 0.2s;
-  &:hover {
-    filter: brightness(120%);
+.fade-in {
+  animation: slide-in 0.8s ease forwards;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
   }
 
-  &:active {
-    filter: brightness(80%);
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  main {
+    padding: 1rem;
   }
 }
 
@@ -184,19 +179,3 @@ fieldset {
 #counter-image.rotate {
   transform: rotate(180deg);
 }
-
-
-
-.slide-in-hidden {
-  opacity: 0;
-  transform: translateX(-100%); /* Start from off-screen left */
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.slide-in {
-  opacity: 1;
-  transform: translateX(0); /* Slide into place */
-  transition: transform 0.8s;
-  perspective: 1000px;
-}
-
